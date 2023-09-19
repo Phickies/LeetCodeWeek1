@@ -38,9 +38,8 @@ class Sltions:
         """
 
         carry = 0
-        dummyLinkedList = LinkedList(intMode=True)
-        l3              = dummyLinkedList
-        l3.head         = ListNode()
+        l3 = LinkedList(intMode=True)
+        l3.head = ListNode()
 
         # Traverse the linked list, the val is None then assign to 0
         while (l1.head or l2.head or carry != 0):
