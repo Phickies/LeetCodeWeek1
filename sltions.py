@@ -59,6 +59,8 @@ class Sltions:
  
             l1.head = l1.head.next if l1.head is not None else None
             l2.head = l2.head.next if l2.head is not None else None
+        
+        l3.head = l3.head.next
 
         return l3
 
