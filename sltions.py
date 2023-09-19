@@ -1,4 +1,4 @@
-import prblms
+from prblms import LinkedList,ListNode
 import random
 
 class Sltions:
@@ -30,19 +30,30 @@ class Sltions:
 
 
     def addTwoNumber(self, 
-                     l1: prblms.LinkedList, 
-                     l2: prblms.LinkedList
-                     ) -> prblms.LinkedList:
+                     l1: LinkedList, 
+                     l2: LinkedList
+                     ) -> LinkedList:
         """
         Add the two linked list and return the sum as a linked list
         """
+        n1, n2 = "",""
+
+        new_linked_list = LinkedList(intMode=False)
+
         while (l1.head): 
+            n1 += l1.head.val
             l1.head = l1.head.next
+        while (l2.head):
+            n2 += l2.head.val
             l2.head = l2.head.next
+        self.splitToLinkedList(new_linked_list,str(int(n1) + int(n2)))
+
+        return new_linked_list
+        
 
     
     def splitToLinkedList(self, 
-                          llistToBeSplit: prblms.LinkedList , 
+                          llistToBeSplit: LinkedList , 
                           val: str
                           ) -> None:
         """
