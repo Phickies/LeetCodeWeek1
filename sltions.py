@@ -36,25 +36,38 @@ class Sltions:
         """
         Add the two linked list and return the sum as a linked list
         """
-        n1, n2 = "",""
 
-        new_linked_list = LinkedList(intMode=False)
+        carry = 0
+        dummyLinkedList = LinkedList(intMode=True)
+        l3              = dummyLinkedList
+        l3.head         = ListNode()
 
-        while (l1.head): 
-            n1 += l1.head.val
-            l1.head = l1.head.next
-        while (l2.head):
-            n2 += l2.head.val
-            l2.head = l2.head.next
-        self.splitToLinkedList(new_linked_list,str(int(n1) + int(n2)))
+        # Traverse the linked list, the val is None then assign to 0
+        while (l1.head or l2.head or carry != 0):
+            
+            # Assign fake value if there is no node
+            l1_val = l1.head.val if l1.head is not None else 0
+            l2_val = l2.head.val if l2.head is not None else 0
 
-        return new_linked_list
-        
+            # Sum the two value from two linked list
+            current_sum = l1_val + l2_val + carry
+            # Caculate the remaining number
+            carry       = current_sum // 10
+            # This is the number that show
+            last_num    = current_sum % 10
 
-    
+            l3.insertAtEnd(last_num)
+ 
+            l1.head = l1.head.next if l1.head is not None else None
+            l2.head = l2.head.next if l2.head is not None else None
+
+        return dummyLinkedList
+
+
+
     def splitToLinkedList(self, 
                           llistToBeSplit: LinkedList , 
-                          val: str
+                          val
                           ) -> None:
         """
         Method to split the string into Linked List.

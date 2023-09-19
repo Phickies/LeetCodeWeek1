@@ -23,6 +23,7 @@ class LinkedList:
             val = int(val)
 
         new_Node = ListNode(val)
+
         if self.head is None:
             self.head = new_Node
             return
