@@ -3,7 +3,7 @@ import prblms
 
 if __name__ == '__main__':
     
-    n = prblms.User().intInput()
-    x = prblms.User().listInputInt()
-    print(sltions.Sltions().minOperations(x,n))
+    while (KeyboardInterrupt):
+        s = prblms.User().strInput()
+        print(sltions.Sltions().romanToInt(s))
 
