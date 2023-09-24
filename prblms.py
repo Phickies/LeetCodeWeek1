@@ -242,7 +242,7 @@ class User:
         l = list()
         listLen = int(input("Please input your list length: "))
         for i in range(listLen):
-            n = int(input("Please input your string at postion " + str(i) + " :"))
+            n = input("Please input your string at postion " + str(i) + " :")
             l.append(n)
         return l
     
